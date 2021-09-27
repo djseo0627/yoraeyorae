@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="view"
+            type="com.yoraeyorae.views.FragmentChattingRoom" />
+        <variable
+            name="viewModel"
+            type="com.yoraeyorae.viewmodel.FragmentChattingRoomViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/container_step"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:weightSum="9">
+
+            <ImageView
+                android:id="@+id/iv_sunjeom"
+                android:layout_width="0dp"
+                android:src="@drawable/sunjeom"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:src="@drawable/arrow"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <ImageView
+                android:id="@+id/iv_arrive"
+                android:layout_width="0dp"
+                android:src="@drawable/arrive"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:src="@drawable/arrow"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <ImageView
+                android:id="@+id/iv_purchase"
+                android:layout_width="0dp"
+                android:src="@drawable/purchase"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:src="@drawable/arrow"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <ImageView
+                android:id="@+id/iv_accomplished"
+                android:layout_width="0dp"
+                android:src="@drawable/accomplished"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_chatting"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#93A1CA"
+            android:paddingVertical="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/container_step"
+            app:layout_constraintBottom_toTopOf="@id/container_edit"
+            tools:listitem="@layout/recycler_chatting" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_performer_buttons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/et_chat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btn_arrive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:onClick="@{view::onClickArrive}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="미션시작지도착"/>
+
+                <Button
+                    android:id="@+id/btn_many_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:onClick="@{view::onClickMany}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_arrive"
+                    android:text="사람이많아요"/>
+
+                <Button
+                    android:id="@+id/btn_purchase_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{view::onClickPurchaseDone}"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_many_people"
+                    android:text="구매완료"/>
+
+                <Button
+                    android:id="@+id/btn_mission_accomplished"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:onClick="@{view::onClickAccomplished}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_purchase_done"
+                    android:text="미션수행완료"/>
+
+                <Button
+                    android:id="@+id/btn_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    app:layout_constraintTop_toBottomOf="@id/btn_arrive"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="지도보기"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_register_buttons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/et_chat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:onClick="@{view::onClickBtnCancel}"
+                    android:text="미션취소" />
+
+                <Button
+                    android:id="@+id/btn_location_check"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="수행자 위치확인"
+                    android:onClick="@{view::onClickLocationCheck}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_cancel"/>
+
+                <Button
+                    android:id="@+id/btn_change"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="교환누락신청"
+                    android:onClick="@{view::onClickChange}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_location_check"/>
+
+                <Button
+                    android:id="@+id/btn_end"
+                    style="@android:style/Widget.Material.Light.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="미션종"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_change"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_camera"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/camera"
+                android:layout_marginBottom="10dp"
+                android:onClick="@{view::onClickCamera}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/et_chat"/>
+
+
+            <EditText
+                android:id="@+id/et_chat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="내용 입력(128자 제한)"
+                android:inputType="textMultiLine"
+                android:maxLength="128"
+                android:scrollHorizontally="false"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_send"
+                app:layout_constraintStart_toEndOf="@id/iv_camera" />
+
+            <Button
+                android:id="@+id/btn_send"
+                style="@android:style/Widget.Material.Light.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="입력"
+                android:onClick="@{view::onClickSendSetHardCodeData}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/container_map_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

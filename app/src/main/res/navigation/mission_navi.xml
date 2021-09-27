@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mission_navi"
+    app:startDestination="@id/fragmentStepNone">
+
+    <fragment
+        android:id="@+id/fragmentStepNone"
+        android:name="com.yoraeyorae.views.step.FragmentStepNone"
+        android:label="FragmentStepNone"
+        tools:layout="@layout/fragment_step_none">
+        <action
+            android:id="@+id/action_fragmentStepNone_to_fragmentStep1"
+            app:destination="@id/fragmentStep1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentStep1"
+        android:name="com.yoraeyorae.views.step.FragmentStep1"
+        android:label="FragmentStep1"
+        tools:layout="@layout/fragment_step1">
+        <action
+            android:id="@+id/action_fragmentStep1_to_fragmentStep2"
+            app:destination="@id/fragmentStep2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentStep2"
+        android:name="com.yoraeyorae.views.step.FragmentStep2"
+        android:label="fragment_step2"
+        tools:layout="@layout/fragment_step2" >
+        <action
+            android:id="@+id/action_fragmentStep2_to_fragmentStep3"
+            app:destination="@id/fragmentStep3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentStep3"
+        android:name="com.yoraeyorae.views.step.FragmentStep3"
+        android:label="FragmentStep3"
+        tools:layout="@layout/fragment_step3">
+        <action
+            android:id="@+id/action_fragmentStep3_to_fragmentStepNone"
+            app:destination="@id/fragmentStepNone" />
+    </fragment>
+
+</navigation>

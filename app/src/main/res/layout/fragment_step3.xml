@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="view"
+            type="com.yoraeyorae.views.step.FragmentStep3" />
+        <variable
+            name="viewModel"
+            type="com.yoraeyorae.viewmodel.step.FragmentStep3ViewModel" />
+        <variable
+            name="missionInfo"
+            type="com.yoraeyorae.viewmodel.MainPerformerViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="630dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_mission_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{missionInfo.category}"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_timer_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제한시간"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="left|center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/tv_timer_title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_destination"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/sample"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_category" />
+
+        <TextView
+            android:id="@+id/tv_destination_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@{missionInfo.destination}"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/iv_destination"
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_category" />
+
+        <ImageView
+            android:id="@+id/iv_destination_map"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/sample"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_destination_address"
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_category" />
+
+        <Button
+            android:id="@+id/btn_mission_detail"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_destination_map" />
+
+        <Button
+            android:id="@+id/btn_many_people"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_mission_detail" />
+
+        <Button
+            android:id="@+id/btn_mission_accomplished"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:text="미션수행완료"
+            android:onClick="@{view::onClickMissionAccomplished}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_many_people" />
+
+        <Button
+            android:id="@+id/btn_take_picture"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:onClick="@{view::onClickCapture}"
+            android:text="촬영"
+            app:layout_constraintBaseline_toBaselineOf="@id/btn_mission_accomplished"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_capture_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/sample"
+            app:imageFromUrl="@{missionInfo.img}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_mission_accomplished" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yoraeyorae.viewmodel.DialogFragmentAlertViewModel" />
+
+        <variable
+            name="info"
+            type="com.yoraeyorae.viewmodel.step.MissionInfoViewModel" />
+
+        <variable
+            name="view"
+            type="com.yoraeyorae.views.DialogFragmentAlert" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.DialogFragmentAlert">
+
+        <LinearLayout
+            android:id="@+id/container_alert_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tv_border"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:weightSum="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_alert_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:gravity="left|center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_x_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/sample" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_alert_title">
+
+            <ImageView
+                android:id="@+id/iv_alert_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/sample"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_alert_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_alert_cancel"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="@{view.onClickCancel}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_alert_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_alert_confirm" />
+            <!--            android:onClick="@{()->viewModel.onClickConfirmCancel(false)}"-->
+
+            <ImageView
+                android:id="@+id/iv_alert_confirm"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="40dp"
+                android:onClick="@{view.onClickConfirm}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_alert_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <!--            android:onClick="@{()->viewModel.onClickConfirmCancel(true)}"-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

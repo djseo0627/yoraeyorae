@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="홈"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_chat"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="채팅"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_change"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="수행자전환"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_mission_list"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="등록미션함"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_my_page"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="마이페이지"
+        tools:ignore="HardcodedText" />
+</menu>

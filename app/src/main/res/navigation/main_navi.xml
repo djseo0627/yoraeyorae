@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navi"
+    app:startDestination="@id/fragmentRegisterMain">
+
+    <fragment
+        android:id="@+id/fragmentRegisterMain"
+        android:name="com.yoraeyorae.views.FragmentMainRegister"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main_register">
+        <action
+            android:id="@+id/action_registerMainFragment_to_convenienceFragment"
+            app:destination="@id/fragmentConvenience"
+            app:enterAnim="@anim/horizon_enter"
+            app:exitAnim="@anim/horizon_exit" />
+        <action
+            android:id="@+id/action_registerMainFragment_to_pointChargeFragment"
+            app:destination="@id/fragmentPointCharge" />
+        <action
+            android:id="@+id/action_registerMainFragment_to_chattingFragment"
+            app:destination="@id/fragmentChatting" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPerformerMain"
+        android:name="com.yoraeyorae.views.FragmentMainPerformer"
+        android:label="PerformerMainFragment"
+        tools:layout="@layout/fragment_main_performer">
+        <action
+            android:id="@+id/action_performerMainFragment_to_pointChargeFragment"
+            app:destination="@id/fragmentPointCharge" />
+        <action
+            android:id="@+id/action_performerMainFragment_to_chattingFragment"
+            app:destination="@id/fragmentChatting" />
+        <action
+            android:id="@+id/action_performerMainFragment_to_fragmentMissionList"
+            app:destination="@id/fragmentMissionList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentChatting"
+        android:name="com.yoraeyorae.views.FragmentChattingList"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting_list" >
+        <action
+            android:id="@+id/action_fragmentChatting_to_fragmentChattingRoom"
+            app:destination="@id/fragmentChattingRoom" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentConvenience"
+        android:name="com.yoraeyorae.views.FragmentCategoryConvenience"
+        android:label="fragment_convenience"
+        tools:layout="@layout/fragment_convenience">
+        <action
+            android:id="@+id/action_convenienceFragment_to_costInfoFragment"
+            app:destination="@id/fragmentCostInfo" />
+        <action
+            android:id="@+id/action_convenienceFragment_to_pointChargeFragment"
+            app:destination="@id/fragmentPointCharge" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCostInfo"
+        android:name="com.yoraeyorae.views.FragmentCostInfo"
+        android:label="fragment_mission_regist_confirm"
+        tools:layout="@layout/fragment_cost_info">
+        <argument
+            android:name="remainMoney"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentCostInfo_to_fragmentWaiting"
+            app:destination="@id/fragmentWaiting" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_performerMainFragment"
+        app:destination="@id/fragmentPerformerMain" />
+    <action
+        android:id="@+id/action_global_registerMainFragment"
+        app:destination="@id/fragmentRegisterMain" />
+    <action
+        android:id="@+id/action_global_chattingFragment"
+        app:destination="@id/fragmentChatting" />
+    <fragment
+        android:id="@+id/fragmentPointCharge"
+        android:name="com.yoraeyorae.views.FragmentCharge"
+        android:label="fragment_point_charge"
+        tools:layout="@layout/fragment_charge" >
+        <action
+            android:id="@+id/action_fragmentPointCharge_to_fragmentChargePassword"
+            app:destination="@id/fragmentChargePassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/convenienceMissionDetailFragment"
+        android:name="com.yoraeyorae.views.FragmentRegistConfirm"
+        android:label="fragment_convenience_mission_detail"
+        tools:layout="@layout/fragment_regist_confirm" />
+    <fragment
+        android:id="@+id/fragmentMissionList"
+        android:name="com.yoraeyorae.views.FragmentMissionList"
+        android:label="FragmentMissionList" />
+    <fragment
+        android:id="@+id/fragmentWaiting"
+        android:name="com.yoraeyorae.views.FragmentWaiting"
+        android:label="FragmentWaiting" >
+        <action
+            android:id="@+id/action_fragmentWaiting_to_fragmentConvenience"
+            app:destination="@id/fragmentConvenience" />
+        <action
+            android:id="@+id/action_fragmentWaiting_to_fragmentMissionCancel"
+            app:destination="@id/fragmentMissionCancel" />
+        <action
+            android:id="@+id/action_fragmentWaiting_to_fragmentChattingRoom"
+            app:destination="@id/fragmentChattingRoom" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMissionCancel"
+        android:name="com.yoraeyorae.views.FragmentMissionCancel"
+        android:label="FragmentMissionCancel" >
+        <action
+            android:id="@+id/action_fragmentMissionCancel_to_fragmentRegisterMain"
+            app:destination="@id/fragmentRegisterMain" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentChattingRoom"
+        android:name="com.yoraeyorae.views.FragmentChattingRoom"
+        android:label="FragmentChattingRoom" />
+    <fragment
+        android:id="@+id/fragmentChargePassword"
+        android:name="com.yoraeyorae.views.FragmentChargePassword"
+        android:label="FragmentChargePassword" />
+
+
+</navigation>

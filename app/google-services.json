@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "748686257171",
+    "firebase_url": "https://ganda-b9f78-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ganda-b9f78",
+    "storage_bucket": "ganda-b9f78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748686257171:android:d67d83075d0ab84888e3e6",
+        "android_client_info": {
+          "package_name": "com.ganda.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvzbgYxlwBXHW8eqOv5BLSCZpVMBwF6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748686257171:android:881366d40b41091788e3e6",
+        "android_client_info": {
+          "package_name": "com.ganda.fbchattingtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvzbgYxlwBXHW8eqOv5BLSCZpVMBwF6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748686257171:android:dd8760203e2e057588e3e6",
+        "android_client_info": {
+          "package_name": "com.ganda.opencvtest5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvzbgYxlwBXHW8eqOv5BLSCZpVMBwF6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748686257171:android:442aba9bb9c8624088e3e6",
+        "android_client_info": {
+          "package_name": "com.yoraeyorae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvzbgYxlwBXHW8eqOv5BLSCZpVMBwF6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748686257171-ctee8gbiobof0ci1mandnhd5jj8f05ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
